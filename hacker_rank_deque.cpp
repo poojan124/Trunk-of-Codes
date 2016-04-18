@@ -4,28 +4,24 @@
 using namespace std;
 void printKMax(int arr[], int n, int k){
    //Write your code here.
-    deque<int> dq;
-    int max=arr[0],count=1;
-    dq.push_back(arr[0]);
-    for(int i=1;i<n;i++)
+    deque<int> dq(k);
+    int i;
+    for(i=0;i<k;i++)
     {
-        dq.push_back(arr[i]);
-        if(arr[i]>dq[count-1])
-        {
-            count++;
-            if(i>k-1)
-                count=k;
-        }
-        printf("count = %d %d\n",count,dq.size());
-        if(i>=k-1)
-        {
-            printf("%d ",dq[count-1]);
-            dq.pop_front();
-            count--;
-        }
+        while((dq.empty()!=true)&&arr[i]>=arr[dq.back()])
+            dq.pop_back();
+        dq.push_back(i);
     }
-    printf("\n");
-
+    for(;i<n;i++)
+    {
+        printf("%d ",arr[dq.front()]);
+        while(dq.empty()!=true&&dq.front()<=i-k)
+            dq.pop_front();
+        while(dq.empty()!=true&&arr[i]>=arr[dq.back()])
+            dq.pop_back();
+        dq.push_back(i);
+    }
+    printf("%d\n",arr[dq.front()]);
 }
 int main(){
 
@@ -33,11 +29,11 @@ int main(){
    cin >> t;
    while(t>0) {
       int n,k;
-       cin >> n >> k;
+        scanf("%d %d",&n,&k);
        int i;
        int arr[n];
        for(i=0;i<n;i++)
-            cin >> arr[i];
+            scanf("%d",&arr[i]);
        printKMax(arr, n, k);
        t--;
      }
