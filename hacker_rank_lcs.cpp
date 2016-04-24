@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 int max(int a,int b){return a>b?a:b;}
-int dp[2][1005];
+int dp[1005][1005];
 int main()
 {
     int n,m,ar1[1005],ar2[1005];
@@ -23,6 +23,24 @@ int main()
                 dp[i][j]=max(dp[i][j-1],dp[i-1][j]);
         }
     }
-    cout<<dp[n][m]<<endl;
+    int len;
+    len=dp[n][m];
+    int ans[len+1];
+
+    int i = n, j = m;
+    while (i > 0 && j > 0)
+    {
+        if (ar1[i-1] == ar2[j-1])
+        {
+            ans[len-1] = ar1[i-1];
+            i--; j--; len--;
+        }
+        else if (dp[i-1][j]>dp[i][j-1])
+            i--;
+        else
+            j--;
+    }
+    for(i=0;i<dp[n][m];i++)
+        cout<<ans[i]<<" ";
     return 0;
 }
