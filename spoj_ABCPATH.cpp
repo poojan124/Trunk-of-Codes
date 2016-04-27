@@ -15,12 +15,8 @@ void dfs(int i,int j){
        // cout<<"return for"<<i<<" and "<<j<<" "<<str[i][j]<<" "<<(char)('A'+count)<<endl;
         return;
     }
-    if(sol[i][j]!=0)
-    {
-        cout<<"happen for "<<i<<" and "<<j<<"sol : "<<sol[i][j]<<endl;
-        ac=sol[i][j];
+    if(v[i][j]==1)
         return;
-    }
     v[i][j]=1;
     count++;
     //sol[i][j]=count;
@@ -34,11 +30,14 @@ void dfs(int i,int j){
     dfs(i+1,j+1);
     dfs(i+1,j);
     dfs(i+1,j-1);
+    count--;
 }
 int main()
 {
     cin>>n>>m;
+    int t=0;
     while(n!=0&&m!=0){
+        t++;
         //string str[n];
         for(int i=0;i<n;i++)
             cin>>str[i];
@@ -64,15 +63,15 @@ int main()
                     max=max1;
             }
         }
-        cout<<max<<endl;
-        for(int i=0;i<n;i++)
+        cout<<"Case "<<t<<": "<<max<<endl;
+        /**for(int i=0;i<n;i++)
         {
             for(int j=0;j<m;j++)
             {
                 cout<<sol[i][j]<<" ";
             }
             cout<<endl;
-        }
+        }**/
         cin>>n>>m;
 
     }
