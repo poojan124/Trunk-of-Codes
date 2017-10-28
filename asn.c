@@ -1,0 +1,70 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<ctype.h>
+#include<string.h>
+int main()
+{
+  int a1[3],a2[3],a3[3],a4[3],b[5],i,j,k,c,x,z;
+  for(i=0;i<3;i++)
+  {
+      scanf("%d",&a1[i]);
+  }
+  for(j=0;j<3;j++)
+  {
+      scanf("%d",&a2[j]);
+  }
+  for(c=0;c<3;c++)
+  {
+      scanf("%d",&a3[c]);
+  }
+  for(k=0;k<3;k++)
+  {
+      scanf("%d",&a4[k]);
+  }
+  for(x=0;x<5;x++)
+  {
+      scanf("%d",&b[x]);
+  }
+  for(z=0;z<5;z++)
+  {
+    if(b[z]==1)
+    {
+        printf("\n");
+        for(k=0;k<3;k++)
+        {
+            printf("%d",a1[k]);
+        }
+    }
+     if(b[z]==2)
+    {
+        printf("\n");
+        for(j=0;j<3;j++)
+        {
+            printf("%d",a2[j]);
+        }
+    }
+     if(b[z]==3)
+    {
+        printf("\n");
+        for(c=0;c<3;c++)
+        {
+            printf("%d",a3[c]);
+        }
+    }
+     if(b[z]==4)
+    {
+        printf("\n");
+        for(k=0;k<3;k++)
+        {
+            printf("%d",a4[k]);
+        }
+    }
+    if(b[z]>4)
+    {
+        printf("\ninvalid");
+    }
+
+  }
+  return 0;
+}

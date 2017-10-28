@@ -1,0 +1,229 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char input[10000],output[10000],ch,flag=0;
+    int i,t,n,c,no[26] = {0},x;
+    int a1=0,b1=0,c1=0,d1=0,e1=0,f1=0,g1=0,h1=0,i1=0,j1=0,k1=0,l1=0,m1=0,n1=0,o1=0,p1=0,q1=0,r1=0,s1=0,t1=0,u1=0,v1=0,w1=0,x1=0,y1=0,z1=0;
+    gets(input);
+    n = strlen(input);
+    for (c = 0; c < n; c++)
+    {
+        if(isupper(input[c]))
+           {
+               input[c]=tolower(input[c]);
+           }
+        ch = input[c] - 'a';
+        no[ch]++;
+    }
+    t = 0;
+    for (ch = 'a'; ch <= 'z'; ch++)
+    {
+        x = ch - 'a';
+
+        for (c = 0; c < no[x]; c++)
+        {
+            output[t] = ch;
+            t++;
+        }
+    }
+    output[t] = '\0';
+    for(i=0;i<n;i++)
+    {
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='a')
+            {
+                a1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='b')
+            {
+                b1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='c')
+            {
+                c1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='d')
+            {
+                d1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='e')
+            {
+                e1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='f')
+            {
+                f1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='g')
+            {
+                g1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='h')
+            {
+                h1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='i')
+            {
+                i1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='j')
+            {
+                j1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='k')
+            {
+                k1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='l')
+            {
+                l1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='m')
+            {
+                m1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='n')
+            {
+                n1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='o')
+            {
+                o1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='p')
+            {
+                p1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='q')
+            {
+                q1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='r')
+            {
+                r1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='s')
+            {
+                s1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='t')
+            {
+                t1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='u')
+            {
+                u1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='v')
+            {
+                v1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='w')
+            {
+                w1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='x')
+            {
+                x1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='y')
+            {
+                y1++;
+            }
+        }
+        for(c=0;c<n;c++)
+        {
+            if(output[c]=='z')
+            {
+                z1++;
+            }
+        }
+    }
+    if(a1>0 && b1>0 && c1>0 && d1>0 && e1>0 && f1>0 && g1>0 && h1>0 && i1>0  && j1>0  && k1>0  && l1>0  && m1>0  && n1>0  && o1>0  && p1>0 && q1>0  && r1>0  && s1>0  && t1>0  && u1>0  && v1>0  && w1>0  && x1>0  && y1>0  && z1>0  )
+    {
+        printf("pangram");
+    }
+    else
+    {
+        printf("not pangram");
+    }
+
+    return 0;
+}

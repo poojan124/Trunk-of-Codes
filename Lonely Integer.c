@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<math.h>
+#include<string.h>
+#include<ctype.h>
+#include<stdlib.h>
+int main()
+{
+    int arr[1000],i,j,a,c;
+    scanf("%d",&a);
+    for(i=0;i<a;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<a;i++)
+    {
+        for(j=i+1;j<a;j++)
+        {
+            if(arr[i]>arr[j])
+            {
+                c=arr[i];
+                arr[i]=arr[j];
+                arr[j]=c;
+            }
+        }
+    }
+    for(i=0;i<a;i++)
+    {
+        if(arr[i]==arr[i+1])
+        {
+            arr[i]='\0';
+            arr[i+1]='\0';
+        }
+    }
+    for(i=0;i<a;i++)
+    {
+        if(arr[i]!='\0')
+        {
+            printf("%d",arr[i]);
+        }
+    }
+    return 0;
+}
