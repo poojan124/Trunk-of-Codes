@@ -1,5 +1,5 @@
-.o
-.O
-.object
-.exe
-.apk
+*.o
+*.O
+*.object
+*.exe
+*.apk
